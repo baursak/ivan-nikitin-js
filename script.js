@@ -1,17 +1,5 @@
-function MyDate() {
-    this.date = 28,
-        this.month = 1,
-        this.year = 2013,
-        this.toString = function () {
-            return this.date + "." + this.month + "." + this.year;
-        }
-};
-var d = new MyDate();
-console.log("Today is " + d);
-var i;
-for(i in d){
-    document.write(i);
-    document.write(" : ");
-    document.write(d[i]);
-    document.write("<br>");
+function showString(param) {
+    document.write(
+        '<span style="color:' + param.color + '">' + param.string + '</span>');
 }
+showString({color: 'red', string: 'Hello world'});
