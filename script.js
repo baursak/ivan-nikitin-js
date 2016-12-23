@@ -1,11 +1,19 @@
-function showString(param) {
-    if (!param) param = new Object();
-    if (!param.color) param.color = 'black';
-    if (!param.string) param.string = 'Hello';
-    document.write(
-        '<span style="color:' + param.color + '">' + param.string + '</span><br>');
+/*
+ * чтобы отсортировать массив чисел нужно сделать функцию сравнения
+ * поскольку по умолчанию метод sort() сортирует содержимое массива как строки
+ * т.е. лексикографически
+ */
+var arr1 = [1, 50, 200, 8, 3000, 9];
+
+// встроенная "неправильная" для чисел сортировка
+console.log(arr1.sort());
+
+// собственно функция
+function myCompare(a, b) {
+    if (a < b)return -1;
+    if (a == b)return 0;
+    if (a > b)return 1;
 }
-showString({color: 'red', string: 'Hello world'});
-showString({color: 'red'});
-showString({string: 'Hello John'});
-showString();
+
+// "правильная" для чисел сортировка
+console.log(arr1.sort(myCompare));
