@@ -1,20 +1,23 @@
-var students = [
-    {name: "John", mark: 5},
-    {name: "Jane", mark: 3},
-];
-
-// хитрая пользовательская функция сравнения для правильной числовой сортировки
-function myCompare(a, b){
-    return a.mark - b.mark;
-}
-
-// сортировка по конкретному свойству
-console.log(students.sort(myCompare));
-
 /*
- * сортировка в обратном порядке:
- * сначала отсортировать в прямом порядке
- * а затем запустить функцию reverse()
+ * home work
  */
-
-console.log(students.sort(myCompare).reverse());
+var dates = [];
+var i;
+for (i = 1; i <= 10; i++) {
+    dates.push(new Date(2016, 11, i));
+}
+console.log(dates);
+var days = [
+    'Воскресенье',
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница',
+    'Суббота',
+];
+for (j in dates) {
+    document.write(dates[j].toLocaleDateString()
+        + ' - ' + days[dates[j].getDay()]
+        + '<br>');
+}
