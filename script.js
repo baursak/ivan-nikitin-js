@@ -1,4 +1,4 @@
 function foo(){
-    alert("hello");
+    alert("go to Google");
 }
 // собственно запуск функции foo - в html файле
