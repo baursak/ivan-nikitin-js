@@ -1,8 +1,20 @@
 window.onload = function () {
-    showTime();
-    setInterval('showTime()', 1000);
+    var img = document.getElementsByTagName('img')[0];
+    img.id = 'myImg';
+    img.onclick = function () {
+        increaseSize();
+    };
 };
-function showTime(){
-    var h1 = document.getElementsByTagName('h1')[0];
-    h1.innerHTML = 'Current time is ' + new Date().toLocaleTimeString();
+function increaseSize() {
+    var myImg = document.getElementById('myImg');
+    var fullWidth = myImg.getAttribute('data-width');
+    var fullHeight = myImg.getAttribute('data-height');
+    var width = myImg.width;
+    var height = myImg.height;
+    if (width < fullWidth || height < fullHeight) {
+        // уеличиваем размеры
+        myImg.width = ++width;
+        myImg.height = ++height;
+        setTimeout('increaseSize()', 50);
+    }
 }
